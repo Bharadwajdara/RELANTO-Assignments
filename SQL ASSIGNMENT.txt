@@ -1,0 +1,102 @@
+1.create table student name student_id(1-10), department?
+
+create table student (name varchar(20),student_id int primary key,department varchar(20));
+
+2.insert 10 rows
+
+insert into student values('Bharath',1,'ece');
+select * from student;
+
+insert into student values('krishna',2,'cse');
+select * from student;
+
+insert into student values('Shashank',3,'cse');
+select * from student;
+
+insert into student values('yashwanth',4,'cse');
+select * from student;
+
+insert into student values('sourav',5,'civ');
+select * from student;
+
+insert into student values('avinash',6,'ece');
+select * from student;
+
+insert into student values('mahesh',7,'civ');
+select * from student;
+
+insert into student values('mani',8,'eee');
+select * from student;
+
+insert into student values('raghu',9,'ece');
+select * from student;
+
+insert into student values('pramodh',10,'eee');
+select * from student;
+
+
+
+
+3.alter the table to add column city
+
+alter table student add column city varchar(20);
+desc student;
+
+
+
+4.update the table with id>5 Qto Bangalore and less than 5 to your choice.
+
+update student set city='Banglore' where student_id>5;
+select * from student;
+
+
+5.alter table add column course as not null with default value as 'Java'
+
+alter table student add column course varchar(20) not null default 'java';
+
+
+6.alter table add column mystate as integer.
+
+alter table student add column mystate int;
+
+
+7.alter table modify column mystate to varchar(20)
+
+alter table student modify column mystate varchar(20);
+
+
+8.alter table rename the column name mystate to state?
+
+alter table student change mystate state varchar(20);
+select * from student;
+
+9. alter table add column zipcode
+
+alter table student add column zipcode int;
+
+
+10. update the course of students with id<3 to angular id>3 to id<8 to spring?
+
+update student set course='angular' where student_id<3;
+
+update student set course='spring' where student_id between 3 and 8;
+
+
+11. print the list of students order by name?
+select * from student order by name;
+
+12. drop the column zipcode
+
+alter table student drop zipcode;
+
+
+13. get the unique course name from student - prints angular, spring,java
+
+select distinct course from student;
+
+
+13. print the student with alias name as
+
+Stud_Name,Stud_Id,Stud_city,Stud_department,Stud_course,Stud_State.
+
+select name as Stud_Name,Student_id as Stud_id,city as Stud_city,department as Stud_department,course as stud_course,state as Stud_state from student;
